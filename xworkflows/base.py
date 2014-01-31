@@ -45,6 +45,12 @@ class State(object):
         self.name = name
         self.title = title
 
+    def __eq__(self, other):
+        """Equality is based on name and title."""
+        if not isinstance(other, State):
+            return NotImplemented
+        return self.name == other.name and self.title == other.title
+
     def __str__(self):
         return self.name
 
